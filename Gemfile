@@ -64,6 +64,12 @@ gem 'jquery-rails'
 #Adding Figaro
 gem 'figaro'
 
+#Adding TDD gems
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
