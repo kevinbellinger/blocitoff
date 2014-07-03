@@ -5,8 +5,14 @@ class TodosController < ApplicationController
 
   def create
       @todo = Todo.new(todo_params)
-      @todo.save
-      redirect_to @todo, notice: 'Your new TODO was saved'
+     
+      if @todo.save
+          flash[:notice] = 'Your new TODO was saved'
+          redirect_to @todo
+      else
+          flash[:notice] = 'Your TODO was not saved'
+          render :new
+    end
   end
 
   def show
